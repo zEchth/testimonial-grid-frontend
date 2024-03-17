@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+body {
+    background-color: hsl(0, 0%, 81%);
+    min-height: 100vh;
+    font-size: 13px;
+    font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: 
+    "bx1 bx1 bx1 bx1 bx1 bx1 bx2 bx2 bx2 bx3 bx3 bx3"
+    "bx4 bx4 bx4 bx5 bx5 bx5 bx5 bx5 bx5 bx3 bx3 bx3"
+    ;
+    gap: 1rem;
+    max-width: 80vw;
+    margin: 5vh auto;
+}
+
+.boxes {
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.box1 {
+    grid-area: bx1;
+    background-color: hsl(263, 55%, 52%);
+    position: relative;
+    z-index: -2;
+}
+.box2 {
+    grid-area: bx2;
+    background-color: hsl(217, 19%, 35%);
+}
+.box3 {
+    grid-area: bx3;
+    background-color: #fff;
+}
+.box4 {
+    grid-area: bx4;
+    background-color: #fff;
+}
+.box5 {
+    grid-area: bx5;
+    background-color: hsl(219, 29%, 14%);
+}
+
+img {
+    border-radius: 50%;
+    border: 1px solid #fff;
+    width: 30px;
+    height: 30px;
+}
+.quote-img {
+    border: none;
+    border-radius: 0;
+    width: 104px; 
+    height: 102px;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    z-index: -1;
+    opacity: .7;
+}
+
+.biodata {
+    display: flex;
+    flex-wrap: wrap;
+}
+.namev {
+    margin-left: 10px;
+}
+.namev .name, .namev .name-1{
+    font-size: 1rem;
+}
+.experience, .experience-1, .about, .about-1 {
+    margin-top: 20px;
+}
+
+
+.name, .experience  {
+    color: hsl(0, 0%, 100%);
+}
+.graduate, .about {
+    color: hsla(0, 0%, 100%, .5);
+}
+.name-1, .experience-1  {
+    color: hsla(0, 0%, 0%, .9);
+}
+.graduate-1, .about-1 {
+    color: hsla(0, 0%, 0%, .7);
+}
+.experience, .experience-1 {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+
+@media screen and (max-width: 956px) and (min-width: 577px) {
+    .biodata {
+        flex-direction: column;  
+    }
+    .namev {
+        margin: 10px 0 0 0;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .box5 {
+        order: 4;
+    }
+    
+    .box4 {
+        order: 5;
+    }
+}
